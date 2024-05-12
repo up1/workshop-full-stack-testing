@@ -18,3 +18,9 @@ node server.js
 * API testing
 * UI testing
 * Manage depedencies
+
+
+### Run testing with jest
+```
+npm test
+```
