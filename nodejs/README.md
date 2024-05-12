@@ -1,7 +1,7 @@
 # Workshop
 * Frontend = ReactJS
 * Backend = NodeJS
-* Database = MySQL
+* Database = SQLite/MySQL
 
 
 ## Workshop with Backend (REST API)
