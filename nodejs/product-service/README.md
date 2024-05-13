@@ -15,3 +15,13 @@ node server.js
 
 ### Testing workshop
 * API testing
+
+### Run all tests
+```
+npm test
+```
+
+### E2E tests
+```
+npm run e2e-test
+```
