@@ -5,8 +5,8 @@ test("Success response with jwttoken", async () => {
   // Arrange
   const server = request.agent(app);
   
-  require("../../initial")();
-  await new Promise((r) => setTimeout(r, 1000));
+  // require("../../initial")();
+  // await new Promise((r) => setTimeout(r, 1000));
 
   // Act
   const response = await server.post("/api/auth/signin").send({

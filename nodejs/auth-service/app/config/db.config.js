@@ -1,4 +1,3 @@
-const SQLite = require("sqlite3");
 module.exports = {
   // Read from environment variables
   HOST: process.env.DB_HOST || "localhost",

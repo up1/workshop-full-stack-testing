@@ -5,7 +5,8 @@ const User = db.user;
 
 const initDB = async () => {
   try {
-    await db.sequelize.sync();
+    // Force: true will drop the table if it already exists
+    await db.sequelize.sync({ force: true });
     initialDataForTest();
     console.log("Synced db.");
   } catch (err) {
