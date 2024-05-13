@@ -1,11 +1,11 @@
 const request = require("supertest");
-const app = require("../app");
+const app = require("../../app");
 
 test("Success response with jwttoken", async () => {
   // Arrange
   const server = request.agent(app);
   
-  require("../initial")();
+  require("../../initial")();
   await new Promise((r) => setTimeout(r, 1000));
 
   // Act

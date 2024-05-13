@@ -1,3 +1,4 @@
+const userRepository = require("../repositories/user.repository");
 const db = require("../models");
 const config = require("../config/auth.config");
 const User = db.user;
@@ -39,11 +40,8 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
-  User.findOne({
-    where: {
-      username: req.body.username,
-    },
-  })
+  userRepository
+    .getUserByUsername(req.body.username)
     .then((user) => {
       if (!user) {
         return res.status(404).send({ message: "User Not found." });
@@ -82,6 +80,7 @@ exports.signin = (req, res) => {
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).send({ message: err.message });
     });
 };
