@@ -56,15 +56,18 @@ const onSubmit = handleSubmit(async (values) => {
         <fieldset class="space-y-4">
             <div class="form-group" :class="{ 'opacity-50 pointer-events-none': isSubmitting }">
                 <input v-model="email" name="email" type="email" placeholder="Email"
+                    data-testid="email-input"
                     class="w-full px-6 py-3 text-base leading-5 text-gray-600 bg-white border border-gray-300 rounded-md" />
                 <span class="text-red-500">{{ errors.email }}</span>
             </div>
             <div class="form-group">
                 <input v-model="password" name="password" type="password" placeholder="Password"
+                    data-testid="password-input"
                     class="w-full px-6 py-3 text-base leading-5 text-gray-600 bg-white border border-gray-300 rounded-md" />
                 <span class="text-red-500">{{ errors.password }}</span>
             </div>
-            <button :disabled="isSubmitting"
+            <button data-testid="submit-button"
+                 :disabled="isSubmitting"
                 class="float-right px-6 py-3 text-base text-white bg-custom-green border border-custom-green rounded-md hover:bg-green-600"
                 :class="{ 'bg-gray-300 cursor-not-allowed': isSubmitting }">
                 Sign in

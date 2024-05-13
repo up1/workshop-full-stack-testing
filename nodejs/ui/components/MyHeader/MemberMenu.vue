@@ -16,7 +16,7 @@ const menuItems = [
 </script>
 
 <template>
-    <ul class="list-none">
+    <ul class="list-none" data-testid="menu-list">
         <li v-for="item in menuItems" :key="item.name" class="float-left text-sm ml-4">
             <NuxtLink :href="item.href" class="block py-1 px-2 text-gray-500 hover:text-gray-800"
                 :class="{ 'text-gray-800': route.name === item.routeName }">

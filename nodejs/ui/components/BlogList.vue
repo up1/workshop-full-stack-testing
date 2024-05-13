@@ -8,7 +8,8 @@ const props = defineProps<{
 
 <template>
     <div>
-        <div v-for="blog in props.blogs" :key="blog.id" class="border-t border-gray-200 py-6">
+        <div v-for="blog in props.blogs" :key="blog.id" data-testid="blog-list-item"
+        class="border-t border-gray-200 py-6">
             <div class="font-light mb-4">
                 <a>
                     <img src="~/assets/images/no-photo.jpeg" alt="author's profile image"
