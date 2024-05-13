@@ -34,12 +34,6 @@ npm run initDataTest
 npm run e2e-test
 ```
 
-### Run only component test
-```
-npm run initDataTest
-npm run component-test
-```
-
 ### Run only component test with test double
 ```
 npm run component-test
