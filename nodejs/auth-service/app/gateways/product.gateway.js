@@ -16,6 +16,20 @@ const callGetAllProducts = (api_server_url, token) => {
     });
 };
 
+const callHome = (api_server_url) => {
+  const instance = axios.create({
+    baseURL: `${api_server_url}`,
+    timeout: 1000
+  });
+  return instance
+    .get(`/`)
+    .then((res) => res.data)
+    .catch((e) => {
+      return { message: "Error" };
+    });
+};
+
 module.exports = {
   callGetAllProducts,
+  callHome
 };

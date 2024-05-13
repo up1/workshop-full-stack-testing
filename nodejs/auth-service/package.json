@@ -9,7 +9,8 @@
     "test": "npm run initDataTest && jest --coverage",
     "e2e-test": "npm run initDataTest && jest --testPathPattern=__tests__/e2e-tests/",
     "component-test": "jest --testPathPattern=__tests__/component-tests/ --coverage",
-    "unit-test": "jest --testPathPattern=__tests__/unit-tests/"
+    "unit-test": "jest --testPathPattern=__tests__/unit-tests/",
+    "integration-test": "jest --testPathPattern=__tests__/integration-tests/"
   },
   "dependencies": {
     "axios": "^1.6.8",
