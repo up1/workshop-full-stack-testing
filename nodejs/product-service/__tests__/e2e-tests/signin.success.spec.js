@@ -1,52 +1,35 @@
 const request = require("supertest");
 const app = require("../../app");
 
-test("Success response with jwttoken", async () => {
+test("Success to get all prducts", async () => {
   // Arrange
   const server = request.agent(app);
 
   // Act
-  const response = await server.post("/api/auth/signin").send({
-    username: "user01",
-    password: "password01",
-  });
+  const response = await server
+    .get("/api/products")
+    .send()
+    .set(
+      "x-access-token",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE1NjEzOTAwLCJleHAiOjE3MTU3MDAzMDB9.p7OdirwZniwpFmNYy2F8xOQyjW3D50QxEDiblIUg6Dk"
+    );
 
   // Assert
   expect(response.status).toEqual(200);
-  expect(response.body.username).toEqual("user01");
-  expect(response.body).toHaveProperty("accessToken");
-  // check response.body.accessToken is not null
-  expect(response.body.accessToken).toBeTruthy();
-  // check response.body.accessToken is jwt format
-  expect(response.body.accessToken.split(".").length).toEqual(3);
+  expect(response.body.length).toEqual(3);
   // check format of response.body with jsonschema
   const schema = {
-    $schema: "http://json-schema.org/draft-07/schema#",
-    type: "object",
-    properties: {
-      id: {
-        type: "integer",
+    type: "array",
+    items: {
+      type: "object",
+      properties: {
+        id: { type: "number" },
+        name: { type: "string" },
+        description: { type: "string" },
+        price: { type: "number" },
       },
-      username: {
-        type: "string",
-        pattern: "^[a-zA-Z0-9]*$",
-      },
-      email: {
-        type: "string",
-        format: "email",
-      },
-      roles: {
-        type: "array",
-        items: {
-          type: "string",
-        },
-      },
-      accessToken: {
-        type: "string",
-        pattern: "^[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_.+/=]*$",
-      },
+      required: ["id", "name", "description", "price"],
     },
-    required: ["id", "username", "email", "roles", "accessToken"],
   };
   const Validator = require("jsonschema").Validator;
   const v = new Validator();

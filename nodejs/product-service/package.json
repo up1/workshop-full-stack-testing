@@ -5,11 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "initDataTest": "npx run-func initial.js initDB",
-    "test": "npm run initDataTest && jest --coverage",
-    "e2e-test": "npm run initDataTest && jest --testPathPattern=__tests__/e2e-tests/",
-    "component-test": "jest --testPathPattern=__tests__/component-tests/",
-    "unit-test": "jest --testPathPattern=__tests__/unit-tests/"
+    "test": "jest --coverage",
+    "e2e-test": "jest --testPathPattern=__tests__/e2e-tests/"
+
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
