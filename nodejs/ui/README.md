@@ -34,3 +34,7 @@ docker compose build
 docker compose up -d
 docker compose ps
 ```
+
+## [Workshop :: Testing](https://github.com/up1/workshop-full-stack-testing/wiki/UI%E2%80%90testing%E2%80%90workshop)
+* Playwright
+* Robot framework
