@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to workshop." });
+  res.json({ message: "Welcome to auth service." });
 });
 
 // routes
