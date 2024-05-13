@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "initDataTest": "npx run-func initial.js initDB",
-    "test": "jest --coverage",
-    "e2e-test": "jest --testPathPattern=__tests__/e2e-tests/",
+    "test": "npm run initDataTest && jest --coverage",
+    "e2e-test": "npm run initDataTest && jest --testPathPattern=__tests__/e2e-tests/",
     "component-test": "jest --testPathPattern=__tests__/component-tests/",
     "unit-test": "jest --testPathPattern=__tests__/unit-tests/"
   },
