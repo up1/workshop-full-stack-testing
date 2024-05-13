@@ -1,16 +1,11 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="2.038837">
-<testsuite name="example.spec.js" timestamp="2024-05-13T16:36:28.281Z" hostname="chromium" tests="2" failures="0" skipped="0" time="2.634" errors="0">
-<testcase name="has title" classname="example.spec.js" time="1.116">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.6223379999999887">
+<testsuite name="blog.list.spec.js" timestamp="2024-05-13T17:40:24.918Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.98" errors="0">
+<testcase name="Working with mock network" classname="blog.list.spec.js" time="0.98">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|../test-results/example-has-title-chromium/video.webm]]
-]]>
-</system-out>
-</testcase>
-<testcase name="get started link" classname="example.spec.js" time="1.518">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|../test-results/example-get-started-link-chromium/video.webm]]
+[[ATTACHMENT|../test-results/blog.list-Working-with-mock-network-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/blog.list-Working-with-mock-network-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>

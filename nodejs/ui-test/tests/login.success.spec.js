@@ -57,3 +57,36 @@ test("Improve with test steps", async ({ page }) => {
     );
   });
 });
+
+test("Improve with test id", async ({ page }) => {
+  await page.goto("http://localhost:3000/");
+
+  // Expect a title "to contain" a substring.
+  await expect(page).toHaveTitle("Home — Demo");
+
+  // Go to sign in page.
+  await test.step("Go to sign in page", async () => {
+    await page.click("text=Sign in");
+    await expect(page).toHaveTitle("Login");
+  });
+
+  // Check login form with email and password.
+  await test.step("Check login form with email and password", async () => {
+    await page.getByTestId("email-input").fill("demo@gmail.com");
+    await page.getByTestId("password-input").fill("123456");
+    await page.getByTestId("submit-button").click();
+  });
+
+  // Check menu have New blog and Settings
+  await test.step("Check login form with email and password", async () => {
+    await expect(page.getByTestId("menu-list").locator("//li[2]/a")).toHaveText(
+      "New Blog"
+    );
+    await expect(page.getByTestId("menu-list").locator("//li[3]/a")).toHaveText(
+      "Settings"
+    );
+    await expect(page.getByTestId("menu-list").locator("//li[4]/a")).toHaveText(
+      "Mockuser"
+    );
+  });
+});
