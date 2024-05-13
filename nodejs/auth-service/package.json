@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "jsonschema": "^1.4.1",
     "supertest": "^7.0.0"
   }
 }
