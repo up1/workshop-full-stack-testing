@@ -39,6 +39,11 @@ npm run e2e-test
 npm run component-test
 ```
 
+### Run only integration test with test double
+```
+npm run integration-test
+```
+
 ### Run only unit test with test double
 ```
 npm run unit-test
