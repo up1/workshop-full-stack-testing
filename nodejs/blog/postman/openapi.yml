@@ -1,0 +1,142 @@
+openapi: 3.0.3
+info:
+  title: blog-app
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: '{{SERVER}}'
+paths:
+  /api/blogs:
+    get:
+      summary: List all blogs
+      description: List all blogs
+      operationId: listAllBlogs
+      responses:
+        '200':
+          $ref: '#/components/responses/BlogsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Blog not found
+              examples:
+                Not found:
+                  value:
+                    message: Blog not found
+  /users/login:
+    post:
+      tags:
+        - User and Authentication
+      summary: Existing user login
+      description: Login for existing user
+      operationId: Login
+      requestBody:
+        required: true
+        $ref: '#/components/requestBodies/LoginUserRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/UserResponse'
+      x-codegen-request-body-name: body
+
+components:
+  schemas:
+    LoginUser:
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+          format: password
+    Blog:
+      required:
+        - username
+        - createdDate
+        - description
+        - favoritesCount
+        - tags
+        - title
+      type: object
+      properties:
+        id:
+          type: number
+        slug:
+          type: string
+        username:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        createdDate:
+          type: string
+          format: date-time
+        favoritesCount:
+          type: integer
+    User:
+      required:
+        - email
+        - image
+        - token
+        - username
+      type: object
+      properties:
+        email:
+          type: string
+        token:
+          type: string
+        username:
+          type: string
+        bio:
+          type: string
+        image:
+          type: string
+  
+  requestBodies:
+    LoginUserRequest:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LoginUser'
+    
+  responses:          
+      BlogsResponse:
+        description: List all blogs
+        content:
+          application/json:
+            schema:
+              required:
+                - body
+                - blogCount
+              properties:
+                body:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Blog'
+                blogCount:
+                  type: integer
+      
+      UserResponse:
+        description: User
+        content:
+          application/json:
+            schema:
+              required:
+                - user
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/User'

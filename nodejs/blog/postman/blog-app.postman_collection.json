@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "b78115e1-1ac0-4573-b833-7905ee4017bd",
+		"name": "blog-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1453931",
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/fullstack~60adbc82-ea9c-4bae-bc8d-584832b78279/collection/1453931-b78115e1-1ac0-4573-b833-7905ee4017bd?action=share&source=collection_link&creator=1453931"
+	},
+	"item": [
+		{
+			"name": "List all blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/api/blogs",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/api/blogs",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"blogs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blogCount\": 2,\n    \"body\": [\n        {\n        \"id\": 1,\n        \"title\": \"Mock Blog 1\",\n        \"description\": \"Description of blog 1\",\n        \"tags\": [\"tag 1\", \"tag 2\"],\n        \"username\": \"Somkiat Pui\",\n        \"createdDate\": \"2024/05/02\",\n        \"favoritesCount\": 100\n        },\n        {\n        \"id\": 2,\n        \"title\": \"Mock Blog 2\",\n        \"description\": \"Description of blog 2\",\n        \"tags\": [\"tag 3\", \"tag 4\"],\n        \"username\": \"Somkiat Pui\",\n        \"createdDate\": \"2024/05/01\",\n        \"favoritesCount\": 200\n        }\n    ]\n}"
+				},
+				{
+					"name": "Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/api/blogs",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"blogs"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog not found\"\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/api/blogs",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"blogs"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"demo@xx.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER}}/api/users/login",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"demo@xx.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/users/login",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"username\": \"Mockuser\",\n        \"email\": \"demo@xx.com\",\n        \"token\": \"Mock token\",\n        \"image\": \"Mock image url\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
