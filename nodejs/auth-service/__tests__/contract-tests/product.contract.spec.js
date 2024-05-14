@@ -31,7 +31,7 @@ test("Success to get all products", async () => {
         "Content-Type": "application/json",
       },
       body: {
-        blogCount: like(2),
+        blogCount: like(1),
         body: eachLike({
           id: like(1),
           title: like("Mock Blog 1"),
@@ -50,7 +50,7 @@ test("Success to get all products", async () => {
       mockService.url,
       "mock token"
     );
-    expect(products.blogCount).toEqual(2);
+    expect(products.blogCount).toEqual(1);
     // Check json schema
     expect(products.body[0]).toEqual({
       id: expect.any(Number),
