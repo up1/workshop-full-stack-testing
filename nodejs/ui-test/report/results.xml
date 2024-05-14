@@ -1,16 +1,89 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="3.94612">
-<testsuite name="visual-tests/home.screen.spec.js" timestamp="2024-05-14T01:06:12.856Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.809" errors="0">
-<testcase name="Check Home Screen" classname="visual-tests/home.screen.spec.js" time="3.29">
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="4.560418999999994">
+<testsuite name="visual-tests/home.screen.spec.js" timestamp="2024-05-14T01:07:24.912Z" hostname="chromium" tests="2" failures="1" skipped="0" time="7.318" errors="0">
+<testcase name="Check Home Screen" classname="visual-tests/home.screen.spec.js" time="3.763">
+<failure message="home.screen.spec.js:3:5 Check Home Screen" type="FAILURE">
+<![CDATA[  [chromium] › visual-tests/home.screen.spec.js:3:5 › Check Home Screen ─────────────────────
+
+    Error: Screenshot comparison failed:
+
+      38 pixels (ratio 0.01 of all image pixels) are different.
+
+    Expected: /Users/somkiatpuisungnoen/data/slide/automated-testing/demo-testing/nodejs/ui-test/tests/visual-tests/home.screen.spec.js-snapshots/Check-Home-Screen-1-chromium-darwin.png
+    Received: /Users/somkiatpuisungnoen/data/slide/automated-testing/demo-testing/nodejs/ui-test/test-results/visual-tests-home.screen-Check-Home-Screen-chromium/Check-Home-Screen-1-actual.png
+        Diff: /Users/somkiatpuisungnoen/data/slide/automated-testing/demo-testing/nodejs/ui-test/test-results/visual-tests-home.screen-Check-Home-Screen-chromium/Check-Home-Screen-1-diff.png
+
+    Call log:
+      - expect.toHaveScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 38 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - captured a stable screenshot
+      - 38 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      11 |
+      12 |     // Snapshot screen
+    > 13 |     await expect(page).toHaveScreenshot();
+         |                        ^
+      14 |
+      15 |     // Snapshot screen with custom name and diff pixels
+      16 |     // await expect(page).toHaveScreenshot({ maxDiffPixels: 100 });
+
+        at /Users/somkiatpuisungnoen/data/slide/automated-testing/demo-testing/nodejs/ui-test/tests/visual-tests/home.screen.spec.js:13:24
+
+    attachment #1: Check-Home-Screen-1-expected.png (image/png) ─────────────────────────────
+    tests/visual-tests/home.screen.spec.js-snapshots/Check-Home-Screen-1-chromium-darwin.png
+    ─────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: Check-Home-Screen-1-actual.png (image/png) ───────────────────────────────
+    test-results/visual-tests-home.screen-Check-Home-Screen-chromium/Check-Home-Screen-1-actual.png
+    ─────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: Check-Home-Screen-1-diff.png (image/png) ─────────────────────────────────
+    test-results/visual-tests-home.screen-Check-Home-Screen-chromium/Check-Home-Screen-1-diff.png
+    ─────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ───────────────────────────────────────────────────────
+    test-results/visual-tests-home.screen-Check-Home-Screen-chromium/video.webm
+    ─────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: trace (application/zip) ──────────────────────────────────────────────────
+    test-results/visual-tests-home.screen-Check-Home-Screen-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-tests-home.screen-Check-Home-Screen-chromium/trace.zip
+
+    ─────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 <system-out>
 <![CDATA[
+[[ATTACHMENT|../tests/visual-tests/home.screen.spec.js-snapshots/Check-Home-Screen-1-chromium-darwin.png]]
+
+[[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Home-Screen-chromium/Check-Home-Screen-1-actual.png]]
+
+[[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Home-Screen-chromium/Check-Home-Screen-1-diff.png]]
+
 [[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Home-Screen-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Home-Screen-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="Check Popular Tags" classname="visual-tests/home.screen.spec.js" time="3.519">
+<testcase name="Check Popular Tags" classname="visual-tests/home.screen.spec.js" time="3.555">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Popular-Tags-chromium/video.webm]]
+
+[[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Popular-Tags-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>
