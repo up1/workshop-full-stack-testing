@@ -10,7 +10,8 @@
     "e2e-test": "npm run initDataTest && jest --testPathPattern=__tests__/e2e-tests/",
     "component-test": "jest --testPathPattern=__tests__/component-tests/ --coverage",
     "unit-test": "jest --testPathPattern=__tests__/unit-tests/",
-    "integration-test": "jest --testPathPattern=__tests__/integration-tests/"
+    "integration-test": "jest --testPathPattern=__tests__/integration-tests/",
+    "contract-test": "jest --testPathPattern=__tests__/contract-tests/"
   },
   "dependencies": {
     "axios": "^1.6.8",
@@ -25,6 +26,7 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@pact-foundation/pact": "^12.5.0",
     "jest": "^29.7.0",
     "jsonschema": "^1.4.1",
     "supertest": "^7.0.0"
