@@ -1,2 +1,2 @@
-# Workshop :: Full stack testing
+# Workshop :: Full stack testing ....
 * NodeJS
