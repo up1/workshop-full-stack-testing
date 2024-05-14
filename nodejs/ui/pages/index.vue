@@ -68,7 +68,7 @@ const { data: blogList2, pending: blogList2Pending, error: blogList2Error } =
   </div>
 </div>
         <!-- Popular tags -->
-        <div class="md:w-1/4 mt-2">
+        <div class="md:w-1/4 mt-2" data-testid="popular-tags">
           <div class="sidebar p-3 rounded bg-gray-100">
             <p class="mb-2 text-sm font-medium">Popular Tags</p>
             <ul class="tag-list list-none">

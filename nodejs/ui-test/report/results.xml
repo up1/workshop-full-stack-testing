@@ -1,11 +1,16 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.6223379999999887">
-<testsuite name="blog.list.spec.js" timestamp="2024-05-13T17:40:24.918Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.98" errors="0">
-<testcase name="Working with mock network" classname="blog.list.spec.js" time="0.98">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="3.94612">
+<testsuite name="visual-tests/home.screen.spec.js" timestamp="2024-05-14T01:06:12.856Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.809" errors="0">
+<testcase name="Check Home Screen" classname="visual-tests/home.screen.spec.js" time="3.29">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|../test-results/blog.list-Working-with-mock-network-chromium/video.webm]]
-
-[[ATTACHMENT|../test-results/blog.list-Working-with-mock-network-chromium/trace.zip]]
+[[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Home-Screen-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Check Popular Tags" classname="visual-tests/home.screen.spec.js" time="3.519">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/visual-tests-home.screen-Check-Popular-Tags-chromium/video.webm]]
 ]]>
 </system-out>
 </testcase>
