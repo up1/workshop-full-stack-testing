@@ -1,7 +1,7 @@
 const request = require("supertest");
 const app = require("../../app");
 
-test("Success to get all prducts", async () => {
+test("Success to get all products", async () => {
   // Arrange
   const server = request.agent(app);
 
