@@ -27,6 +27,8 @@ npm run e2e-test
 ```
 
 ### Working with BDD (Behavior-Driven Development)
+* [Cucumber with JavaScript](https://cucumber.io/docs/installation/javascript/)
+* [Gherkin reference](https://cucumber.io/docs/gherkin/)
 
 Install
 ```
