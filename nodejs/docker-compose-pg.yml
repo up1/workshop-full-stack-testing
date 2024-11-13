@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user01
+      POSTGRES_PASSWORD: password01
+      POSTGRES_DB: hellodb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/tables.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./database/data.sql:/docker-entrypoint-initdb.d/2.sql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  auth:
+      build:
+        context: ./auth-service-pg
+      environment:
+        - DB_HOST=db
+        - DB_USER=user01
+        - DB_PASSWORD=password01
+      ports:
+        - "3001:3001"
+      depends_on:
+        db:
+          condition: service_healthy
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:3001"]
+        interval: 10s
+        timeout: 5s
+        retries: 3  
+
