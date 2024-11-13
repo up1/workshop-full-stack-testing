@@ -1,7 +1,7 @@
 # Workshop
 * Frontend = ReactJS
 * Backend = NodeJS
-* Database = SQLite/MySQL
+* Database = SQLite/PostgreSQL
 
 ### List of endpoints
 * http://localhost:8080
@@ -23,3 +23,4 @@
 ## UI Testing
 * Playwright
 * Robot framework + Selenium Library
+
