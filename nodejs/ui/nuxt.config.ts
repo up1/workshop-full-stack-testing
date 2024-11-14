@@ -8,4 +8,7 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
   ],
   css: ['~/assets/css/global.css'],
+  routeRules: {
+    "*": { ssr: false },
+  },
 })

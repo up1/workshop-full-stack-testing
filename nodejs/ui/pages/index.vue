@@ -46,7 +46,7 @@ const { data: blogList2, pending: blogList2Pending, error: blogList2Error } =
     <MyContainer>
       <div class="flex md:space-x-4">
         <!-- List of blogs -->
-<div class="md:w-3/4 mr-4">
+<div class="md:w-3/4 mr-4" data-testid="blog-list-item">
   <p v-if="blogList2Pending">Loading blogs...</p>
   <div v-else>
     <p v-if="
